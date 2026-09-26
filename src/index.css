@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-brand: 'Plus Jakarta Sans', 'Pretendard', sans-serif;
+    --font-modern-kr: 'Pretendard', 'Gowun Dodum', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  }
+  body {
+    font-family: var(--font-modern-kr);
+    background-color: #FCFBF7;
+    color: #18181B;
+  }
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+.font-modern-kr {
+  font-family: var(--font-modern-kr);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E4DED4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B00;
+}
+
