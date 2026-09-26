@@ -2,5 +2,7 @@
   "name": "신림동 꼬마다방 - 아늑한 동네 감성 카페 & 수제 디저트",
   "description": "서울 관악구 신림동의 아늑하고 따뜻한 감성 카페 꼬마다방. 정성 가득한 시그니처 아인슈페너, 바삭한 수제 크로플, 달콤한 마카롱과 다쿠아즈, 감성적인 공간과 단골 스탬프를 만나보세요.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
