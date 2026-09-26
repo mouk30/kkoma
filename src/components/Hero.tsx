@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { ExternalLink, ShoppingBag, Stamp, Sparkles, Moon, Sun } from 'lucide-react';
 import { CAFE_INFO, MASCOT_INFO } from '../data/cafeData';
+import heroComaModernImg from '../assets/images/hero_coma_cafe_modern_1790408966634.jpg';
 
 interface HeroProps {
   onOrderClick: () => void;
@@ -137,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EBE5DC] bg-[#F7F5F0] aspect-[4/3] lg:aspect-[16/11]">
               <img
-                src="/src/assets/images/hero_coma_cafe_modern_1790408966634.jpg"
+                src={heroComaModernImg}
                 alt="COMA CAFE 꼬마다방 모던 오렌지 외관"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transform hover:scale-103 transition-transform duration-700"

@@ -1,3 +1,11 @@
+import mascotGirlImg from '../assets/images/mascot_kkoma_girl_1790408941120.jpg';
+import mascotBakingImg from '../assets/images/mascot_kkoma_baking_1790408956303.jpg';
+import heroComaModernImg from '../assets/images/hero_coma_cafe_modern_1790408966634.jpg';
+import interiorComaModernImg from '../assets/images/interior_coma_cafe_modern_1790408982224.jpg';
+import detailMirrorPinkPhoneImg from '../assets/images/detail_mirror_pink_phone_1790409014643.jpg';
+import signatureEinspannerImg from '../assets/images/signature_einspanner_coffee_1790408458724.jpg';
+import dessertCroffleImg from '../assets/images/dessert_croffle_macarons_1790408446761.jpg';
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -26,8 +34,8 @@ export const MASCOT_INFO = {
   name: "꼬마 (Kkoma)",
   title: "COMA CAFE 공식 마스코트",
   badge: "Official Mascot",
-  avatar: "/src/assets/images/mascot_kkoma_girl_1790408941120.jpg",
-  bakingImg: "/src/assets/images/mascot_kkoma_baking_1790408956303.jpg",
+  avatar: mascotGirlImg,
+  bakingImg: mascotBakingImg,
   greeting: "안녕! 꼬마다방에 온 걸 환영해! 오늘 꼬마가 갓 구운 바삭한 크로플 하나 추천해줄까?",
   quote: "새벽 5시까지 불을 밝히고 맛있는 커피와 달콤한 디저트로 기다리고 있어!",
   recommends: [
@@ -70,7 +78,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "signature",
     price: 5500,
     description: "꼬마다방만의 특제 쫀득 크림과 진한 에스프레소가 층을 이루는 모던 시그니처 커피",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     badge: "꼬마 추천 1위",
     isPopular: true,
     tempOptions: "ICE",
@@ -83,7 +91,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "signature",
     price: 5200,
     description: "바삭바삭 씹히는 수제 카라멜 달고나 크런치가 풍성하게 올라간 뉴트로 라떼",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     badge: "달콤 바삭",
     isPopular: true,
     tempOptions: "BOTH",
@@ -96,7 +104,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "signature",
     price: 5800,
     description: "100% 국산 흑임자의 극강의 고소함과 묵직한 크림 텍스처",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     badge: "고소함 극대화",
     tempOptions: "ICE",
     tags: ["고소달콤", "진한크림"]
@@ -108,7 +116,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "dessert",
     price: 8500,
     description: "프랑스산 발효버터 크루아상을 갓 구워 젤라또와 카라멜 브라운치즈를 산더미처럼 올린 베스트셀러",
-    image: "/src/assets/images/dessert_croffle_macarons_1790408446761.jpg",
+    image: dessertCroffleImg,
     badge: "꼬마의 최애 디저트",
     isPopular: true,
     tempOptions: "NONE",
@@ -121,7 +129,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "dessert",
     price: 5000,
     description: "주문 즉시 구워내 따뜻하고 바삭한 크로플 위에 순수 메이플 시럽과 은은한 시나몬",
-    image: "/src/assets/images/dessert_croffle_macarons_1790408446761.jpg",
+    image: dessertCroffleImg,
     tempOptions: "NONE",
     tags: ["주문즉시구움", "버터풍미"]
   },
@@ -132,7 +140,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "dessert",
     price: 13500,
     description: "아몬드 100% 쫀득한 꼬끄와 달지 않은 천연 버터 필링 (황치즈, 솔티카라멜, 얼그레이, 말차, 딸기)",
-    image: "/src/assets/images/dessert_croffle_macarons_1790408446761.jpg",
+    image: dessertCroffleImg,
     badge: "선물 추천",
     isPopular: true,
     tempOptions: "NONE",
@@ -145,7 +153,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "dessert",
     price: 3800,
     description: "국내산 쌀가루로 구워 겉바속푹 다쿠아즈 속에 고메버터와 국산 팥앙금을 도톰하게 채운 건강 디저트",
-    image: "/src/assets/images/dessert_croffle_macarons_1790408446761.jpg",
+    image: dessertCroffleImg,
     tempOptions: "NONE",
     tags: ["글루텐프리", "쌀디저트"]
   },
@@ -156,7 +164,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "dessert",
     price: 6500,
     description: "끼리 크림치즈를 고온에서 구워내 겉은 스모키, 속은 촉촉한 글루텐프리 치즈케이크",
-    image: "/src/assets/images/dessert_croffle_macarons_1790408446761.jpg",
+    image: dessertCroffleImg,
     tempOptions: "NONE",
     tags: ["진한크림치즈", "커피페어링"]
   },
@@ -167,7 +175,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "coffee",
     price: 3800,
     description: "스페셜티 에스프레소에 프리미엄 연유를 황금비율로 조합한 달콤 쌉싸름한 꼬마다방 시그니처",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     badge: "뉴트로 감성",
     tempOptions: "BOTH",
     tags: ["달달구리", "당충전"]
@@ -179,7 +187,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "coffee",
     price: 4000,
     description: "다크초콜릿과 볶은 아몬드의 묵직한 바디감과 깔끔한 애프터테이스트",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     tempOptions: "BOTH",
     tags: ["고소한원두", "데일리커피"]
   },
@@ -190,7 +198,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "coffee",
     price: 4800,
     description: "부드러운 스팀 밀크와 에스프레소의 실키한 조화",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     tempOptions: "BOTH",
     tags: ["실키밀크", "부드러움"]
   },
@@ -201,7 +209,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "coffee",
     price: 5300,
     description: "유기농 통 바닐라빈 시럽으로 완성한 인위적이지 않은 품격 있는 단맛",
-    image: "/src/assets/images/signature_einspanner_coffee_1790408458724.jpg",
+    image: signatureEinspannerImg,
     tempOptions: "BOTH",
     tags: ["바닐라빈", "깊은풍미"]
   },
@@ -212,7 +220,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "non-coffee",
     price: 6000,
     description: "생딸기 과육이 한가득 씹히는 과즙 가득 시즈널 밀크 음료",
-    image: "/src/assets/images/detail_mirror_pink_phone_1790409014643.jpg",
+    image: detailMirrorPinkPhoneImg,
     badge: "생과육 듬뿍",
     tempOptions: "ICE",
     tags: ["생딸기", "상큼달콤"]
@@ -224,7 +232,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "non-coffee",
     price: 5500,
     description: "패션후르츠 씨앗이 톡톡 터지는 수제청과 달콤한 망고 베이스의 스파클링 에이드",
-    image: "/src/assets/images/detail_mirror_pink_phone_1790409014643.jpg",
+    image: detailMirrorPinkPhoneImg,
     tempOptions: "ICE",
     tags: ["톡톡청량", "비타민가득"]
   },
@@ -235,7 +243,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "non-coffee",
     price: 5500,
     description: "생자몽 청과 실론 홍차의 깊고 청량한 밸런스",
-    image: "/src/assets/images/detail_mirror_pink_phone_1790409014643.jpg",
+    image: detailMirrorPinkPhoneImg,
     tempOptions: "BOTH",
     tags: ["자허블", "깔끔한단맛"]
   }
@@ -285,21 +293,21 @@ export const SPACE_STORIES = [
     title: "시그니처 오렌지 파사드 & 잔디 테라스",
     subtitle: "Vibrant Orange Facade & Deck",
     desc: "신림동 골목을 밝히는 감각적인 비비드 오렌지 외관과 그린 스트라이프 어닝, 초록빛 테라스 데크가 COMA CAFE의 활기를 전합니다.",
-    image: "/src/assets/images/hero_coma_cafe_modern_1790408966634.jpg",
+    image: heroComaModernImg,
     tag: "익스테리어 명소"
   },
   {
     title: "코랄레드 부스석 & 핑크 사운드 박스",
     subtitle: "Modern Coral Booth & Pink Sound",
     desc: "미니멀한 크림톤 벽면과 세련된 코랄레드 부스 시트, 감각적인 핑크 사운드 스피커와 원형 테이블이 모던한 감성을 극대화합니다.",
-    image: "/src/assets/images/interior_coma_cafe_modern_1790408982224.jpg",
+    image: interiorComaModernImg,
     tag: "모던 라운지"
   },
   {
     title: "플라워 링 거울 & 레트로 핑크폰 포토존",
     subtitle: "Fairy Light Mirror & Vintage Phone",
     desc: "몽환적인 튤 플라워 조명으로 장식된 대형 원형 거울과 파스텔 핑크 빈티지 전화기가 있는 꼬마다방의 대표 인생샷 스팟입니다.",
-    image: "/src/assets/images/detail_mirror_pink_phone_1790409014643.jpg",
+    image: detailMirrorPinkPhoneImg,
     tag: "시그니처 포토존"
   }
 ];
