@@ -68,37 +68,37 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 {item.category === 'non-coffee' && '음료 & 에이드'}
               </span>
             </span>
-            <h3 className="font-brand text-xl font-black text-[#18181B] mt-0.5">
+            <h3 className="font-brand text-xl font-black text-[#18181B] mt-0.5 break-keep">
               {item.name}
             </h3>
             <p className="text-xs text-[#71717A] mt-0.5">{item.nameEn}</p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-xl text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F4F5] transition-colors"
+            className="p-1.5 rounded-xl text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F4F5] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Body content */}
-        <div className="p-5 space-y-5 max-h-[70vh] overflow-y-auto">
+        <div className="p-4 sm:p-5 space-y-4 sm:space-y-5 max-h-[70vh] overflow-y-auto">
           {/* Item Image & Description */}
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-3.5 sm:gap-4 items-center">
             <img
               src={item.image}
               alt={item.name}
               referrerPolicy="no-referrer"
-              className="w-20 h-20 rounded-2xl object-cover border border-[#EBE5DC] bg-[#F7F5F0] shrink-0"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-[#EBE5DC] bg-[#F7F5F0] shrink-0"
             />
-            <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed break-keep">
               {item.description}
             </p>
           </div>
 
           {/* Temperature Option (HOT / ICE) if applicable */}
           {item.tempOptions === 'BOTH' && (
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <label className="block text-xs font-bold text-[#27272A]">
                 온도 선택
               </label>
@@ -106,7 +106,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setTemp('HOT')}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     temp === 'HOT'
                       ? 'border-[#FF5B00] bg-[#FFF5ED] text-[#FF5B00]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B] hover:bg-[#F4F4F5]'
@@ -117,7 +117,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setTemp('ICE')}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     temp === 'ICE'
                       ? 'border-[#0284C7] bg-[#F0F9FF] text-[#0284C7]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B] hover:bg-[#F4F4F5]'
@@ -131,7 +131,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
 
           {/* Coffee Shot Option */}
           {canAddShot && (
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <label className="block text-xs font-bold text-[#27272A]">
                 샷 추가
               </label>
@@ -139,7 +139,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setExtraShot(false)}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     !extraShot
                       ? 'border-[#FF5B00] bg-[#FFF5ED] text-[#FF5B00]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B]'
@@ -150,7 +150,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setExtraShot(true)}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     extraShot
                       ? 'border-[#FF5B00] bg-[#FFF5ED] text-[#FF5B00]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B]'
@@ -164,7 +164,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
 
           {/* Sweetness option */}
           {isBeverage && (
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <label className="block text-xs font-bold text-[#27272A]">
                 당도 조절
               </label>
@@ -172,7 +172,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setSweetness('default')}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     sweetness === 'default'
                       ? 'border-[#FF5B00] bg-[#FFF5ED] text-[#FF5B00]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B]'
@@ -183,7 +183,7 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setSweetness('less')}
-                  className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                  className={`min-h-[44px] py-2.5 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     sweetness === 'less'
                       ? 'border-[#FF5B00] bg-[#FFF5ED] text-[#FF5B00]'
                       : 'border-[#E4E4E7] bg-white text-[#52525B]'
@@ -206,10 +206,10 @@ export const ItemOptionModal: React.FC<ItemOptionModalProps> = ({
                   className="rounded border-[#D4D4D8] text-[#FF5B00] focus:ring-[#FF5B00] w-4 h-4 cursor-pointer"
                 />
                 <div className="text-xs">
-                  <span className="font-bold text-[#18181B]">
+                  <span className="font-bold text-[#18181B] break-keep">
                     개인 텀블러 지참 할인 (-300원)
                   </span>
-                  <p className="text-[#71717A] mt-0.5">
+                  <p className="text-[#71717A] mt-0.5 break-keep">
                     매장 픽업 시 준비해주신 텀블러에 담아드립니다.
                   </p>
                 </div>

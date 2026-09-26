@@ -32,32 +32,32 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onSelectItem }) => {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section id="menu" className="py-16 md:py-24 bg-white border-t border-[#F0ECE4]">
+    <section id="menu" className="py-14 sm:py-20 md:py-24 bg-white border-t border-[#F0ECE4]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2.5 sm:space-y-3">
           <div className="text-xs text-[#FF5B00] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Specialty Brews & Fresh Bakes</span>
           </div>
-          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight">
+          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight break-keep">
             COMA CAFE 시그니처 메뉴
           </h2>
-          <p className="text-sm sm:text-base text-[#52525B] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#52525B] leading-relaxed break-keep">
             프랑스산 발효버터로 주문 즉시 구워내는 바삭한 브라운치즈 크로플과
             묵직한 특제 크림이 매력적인 아인슈페너까지, 새벽 5시까지 언제든 준비되어 있습니다.
           </p>
         </div>
 
         {/* Filter Bar & Search */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
           {/* Segmented Filter Controls */}
-          <div className="flex items-center gap-1.5 p-1.5 bg-[#F4F1EA] rounded-2xl overflow-x-auto scrollbar-none">
+          <div className="flex items-center gap-1.5 p-1 sm:p-1.5 bg-[#F4F1EA] rounded-2xl overflow-x-auto scrollbar-none touch-pan-x">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap cursor-pointer ${
+                className={`min-h-[40px] px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap cursor-pointer shrink-0 ${
                   selectedCategory === cat.id
                     ? 'bg-[#FF5B00] text-white shadow-xs'
                     : 'text-[#52525B] hover:text-[#18181B] hover:bg-[#EBE6DC]'
@@ -76,12 +76,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onSelectItem }) => {
               placeholder="메뉴나 재료로 검색..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm bg-[#FCFBF7] border border-[#E4E4E7] rounded-xl text-[#18181B] placeholder-[#A1A1AA] focus:outline-hidden focus:border-[#FF5B00] transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 sm:py-2 text-xs sm:text-sm bg-[#FCFBF7] border border-[#E4E4E7] rounded-xl text-[#18181B] placeholder-[#A1A1AA] focus:outline-hidden focus:border-[#FF5B00] transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#A1A1AA] hover:text-[#18181B]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#A1A1AA] hover:text-[#18181B] p-1"
               >
                 지우기
               </button>
@@ -163,30 +163,30 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onSelectItem }) => {
                       ))}
                     </div>
 
-                    <h3 className="font-brand text-lg font-bold text-[#18181B] group-hover:text-[#FF5B00] transition-colors leading-snug">
+                    <h3 className="font-brand text-base sm:text-lg font-bold text-[#18181B] group-hover:text-[#FF5B00] transition-colors leading-snug break-keep">
                       {item.name}
                     </h3>
                     <p className="text-[11px] text-[#A1A1AA] mt-0.5">
                       {item.nameEn}
                     </p>
 
-                    <p className="text-xs text-[#52525B] mt-2.5 leading-relaxed line-clamp-2">
+                    <p className="text-xs text-[#52525B] mt-2 leading-relaxed break-keep line-clamp-2">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Price & Action Button */}
-                  <div className="pt-3 border-t border-[#F0ECE4] flex items-center justify-between">
+                  <div className="pt-3 border-t border-[#F0ECE4] flex items-center justify-between gap-2">
                     <div>
                       <span className="text-[11px] text-[#A1A1AA] block">단품 가격</span>
-                      <span className="font-brand text-lg font-black text-[#18181B] tabular-nums">
+                      <span className="font-brand text-base sm:text-lg font-black text-[#18181B] tabular-nums">
                         {item.price.toLocaleString()}원
                       </span>
                     </div>
 
                     <button
                       onClick={() => onSelectItem(item)}
-                      className="flex items-center gap-1 px-3.5 py-2 rounded-xl bg-white hover:bg-[#FF5B00] text-[#18181B] hover:text-white border border-[#E4E4E7] hover:border-[#FF5B00] text-xs font-bold transition-all cursor-pointer whitespace-nowrap group/btn shadow-xs active:scale-95"
+                      className="min-h-[42px] flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-[#FF5B00] text-[#18181B] hover:text-white border border-[#E4E4E7] hover:border-[#FF5B00] text-xs font-bold transition-all cursor-pointer whitespace-nowrap group/btn shadow-xs active:scale-95"
                     >
                       <Plus className="w-3.5 h-3.5 text-[#FF5B00] group-hover/btn:text-white transition-colors" />
                       <span>담기 / 옵션</span>

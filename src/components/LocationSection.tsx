@@ -12,27 +12,27 @@ export const LocationSection: React.FC = () => {
   };
 
   return (
-    <section id="location" className="py-16 md:py-24 bg-[#FCFBF7]">
+    <section id="location" className="py-14 sm:py-20 md:py-24 bg-[#FCFBF7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12 space-y-2">
           <div className="text-xs text-[#FF5B00] font-bold tracking-wider uppercase">
             Location & Visiting Guide
           </div>
-          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B]">
+          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] break-keep">
             오시는 길 & 심야 만남의 광장 안내
           </h2>
-          <p className="text-xs sm:text-sm text-[#71717A]">
+          <p className="text-xs sm:text-sm text-[#71717A] break-keep leading-relaxed">
             신림역 5번 출구 신원시장 방면, 비비드한 오렌지 파사드와 잔디 테라스가 한눈에 보입니다.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Stylized Direction Visualizer */}
-          <div className="lg:col-span-7 bg-white rounded-3xl border border-[#EBE5DC] p-6 sm:p-8 shadow-xs space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-3xl border border-[#EBE5DC] p-5 sm:p-8 shadow-xs space-y-5 sm:space-y-6">
             {/* Visual Route Guide Box */}
-            <div className="relative bg-[#FFF8F3] rounded-2xl p-6 border border-[#FFDECE] overflow-hidden">
+            <div className="relative bg-[#FFF8F3] rounded-2xl p-4 sm:p-6 border border-[#FFDECE] overflow-hidden">
               <div className="flex items-center justify-between mb-4">
-                <span className="font-brand text-sm font-bold text-[#18181B] flex items-center gap-2">
+                <span className="font-brand text-xs sm:text-sm font-bold text-[#18181B] flex items-center gap-1.5 sm:gap-2">
                   <Navigation className="w-4 h-4 text-[#FF5B00]" />
                   <span>신림역 5번 출구 도보 안내</span>
                 </span>
@@ -40,54 +40,54 @@ export const LocationSection: React.FC = () => {
               </div>
 
               {/* Waypoint steps */}
-              <div className="relative pl-6 space-y-5 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#FFD2B8]">
+              <div className="relative pl-6 space-y-4 sm:space-y-5 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#FFD2B8]">
                 <div className="relative">
-                  <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#18181B] text-white flex items-center justify-center text-[10px] font-bold">
+                  <div className="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#18181B] text-white flex items-center justify-center text-[10px] font-bold">
                     1
                   </div>
-                  <h4 className="text-xs font-bold text-[#18181B]">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#18181B] break-keep">
                     지하철 2호선 · 신림선 신림역 5번 출구
                   </h4>
-                  <p className="text-[11px] text-[#71717A] mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-[#71717A] mt-0.5 break-keep">
                     5번 출구로 나오셔서 신원시장 입구 방면으로 직진합니다.
                   </p>
                 </div>
 
                 <div className="relative">
-                  <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#FF5B00] text-white flex items-center justify-center text-[10px] font-bold">
+                  <div className="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#FF5B00] text-white flex items-center justify-center text-[10px] font-bold">
                     2
                   </div>
-                  <h4 className="text-xs font-bold text-[#18181B]">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#18181B] break-keep">
                     신원시장 입구 사거리 골목 진입
                   </h4>
-                  <p className="text-[11px] text-[#71717A] mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-[#71717A] mt-0.5 break-keep">
                     골목 안쪽으로 약 50m 들어서면 선명한 오렌지색 건물이 보입니다.
                   </p>
                 </div>
 
                 <div className="relative">
-                  <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#03C75A] text-white flex items-center justify-center text-[10px] font-bold">
+                  <div className="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#03C75A] text-white flex items-center justify-center text-[10px] font-bold">
                     ★
                   </div>
-                  <h4 className="text-xs font-bold text-[#18181B]">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#18181B] break-keep">
                     COMA CAFE (24시 꼬마다방) 도착
                   </h4>
-                  <p className="text-[11px] text-[#71717A] mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-[#71717A] mt-0.5 break-keep">
                     비비드 오렌지 파사드 & 그린 스트라이프 어닝, 초록 인조잔디 테라스!
                   </p>
                 </div>
               </div>
 
               {/* Naver Map Direct Action */}
-              <div className="mt-6 pt-4 border-t border-[#FFD9C4] flex flex-wrap items-center justify-between gap-3">
-                <span className="text-xs text-[#71717A]">
+              <div className="mt-5 pt-3.5 border-t border-[#FFD9C4] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <span className="text-[11px] sm:text-xs text-[#71717A] break-keep">
                   실시간 길찾기와 도보 네비게이션을 지원합니다.
                 </span>
                 <a
                   href={CAFE_INFO.naverMapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#03C75A] text-white text-xs font-bold hover:bg-[#029844] transition-colors shadow-xs"
+                  className="min-h-[42px] flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-[#03C75A] text-white text-xs font-bold hover:bg-[#029844] transition-colors shadow-xs active:scale-95"
                 >
                   <span>네이버 플레이스 길찾기</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -96,17 +96,17 @@ export const LocationSection: React.FC = () => {
             </div>
 
             {/* Address with Copy Button */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 bg-[#FCFBF7] rounded-2xl border border-[#EBE5DC]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:p-4 bg-[#FCFBF7] rounded-2xl border border-[#EBE5DC]">
               <div className="space-y-0.5">
-                <span className="text-[11px] text-[#A1A1AA] block">도로명 / 지번 주소</span>
-                <p className="font-brand text-sm font-bold text-[#18181B]">
+                <span className="text-[10px] sm:text-[11px] text-[#A1A1AA] block">도로명 / 지번 주소</span>
+                <p className="font-brand text-xs sm:text-sm font-bold text-[#18181B] break-keep">
                   {CAFE_INFO.address}
                 </p>
               </div>
 
               <button
                 onClick={handleCopyAddress}
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-[#18181B] bg-white border border-[#E4E4E7] hover:bg-[#F4F4F5] rounded-xl transition-colors cursor-pointer shrink-0"
+                className="min-h-[38px] flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-bold text-[#18181B] bg-white border border-[#E4E4E7] hover:bg-[#F4F4F5] rounded-xl transition-colors cursor-pointer shrink-0 active:scale-95"
               >
                 {copied ? (
                   <>
@@ -169,43 +169,43 @@ export const LocationSection: React.FC = () => {
                 편의 시설 & 매장 혜택
               </h3>
 
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs">
                 <div className="p-3 rounded-2xl bg-[#FCFBF7] border border-[#EBE5DC] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold text-[#18181B]">
-                    <Heart className="w-3.5 h-3.5 text-[#FF758F]" />
+                    <Heart className="w-3.5 h-3.5 text-[#FF758F] shrink-0" />
                     <span>반려동물 동반</span>
                   </div>
-                  <p className="text-[11px] text-[#71717A]">
+                  <p className="text-[11px] text-[#71717A] break-keep">
                     목줄/케이지 착용 시 실내 동반 환영
                   </p>
                 </div>
 
                 <div className="p-3 rounded-2xl bg-[#FCFBF7] border border-[#EBE5DC] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold text-[#18181B]">
-                    <Wifi className="w-3.5 h-3.5 text-[#FF5B00]" />
+                    <Wifi className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
                     <span>기가 와이파이</span>
                   </div>
-                  <p className="text-[11px] text-[#71717A]">
-                    전 좌석 고속 무선인터넷 & 충전 콘센트
+                  <p className="text-[11px] text-[#71717A] break-keep">
+                    전 좌석 고속 무선인터넷 & 콘센트
                   </p>
                 </div>
 
                 <div className="p-3 rounded-2xl bg-[#FCFBF7] border border-[#EBE5DC] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold text-[#18181B]">
-                    <Coffee className="w-3.5 h-3.5 text-[#FF5B00]" />
+                    <Coffee className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
                     <span>텀블러 할인</span>
                   </div>
-                  <p className="text-[11px] text-[#71717A]">
+                  <p className="text-[11px] text-[#71717A] break-keep">
                     개인 텀블러 주문 시 300원 즉시 할인
                   </p>
                 </div>
 
                 <div className="p-3 rounded-2xl bg-[#FCFBF7] border border-[#EBE5DC] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold text-[#18181B]">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>간편 결제</span>
                   </div>
-                  <p className="text-[11px] text-[#71717A]">
+                  <p className="text-[11px] text-[#71717A] break-keep">
                     네이버페이 / 제로페이 / 애플페이
                   </p>
                 </div>

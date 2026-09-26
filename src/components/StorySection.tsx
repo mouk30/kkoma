@@ -7,22 +7,22 @@ export const StorySection: React.FC = () => {
     <section id="story" className="py-16 md:py-24 bg-[#FCFBF7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2.5 sm:space-y-3">
           <div className="text-xs text-[#FF5B00] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Modern & Aesthetic Space</span>
           </div>
-          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight">
+          <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight break-keep">
             COMA CAFE 감각적인 공간 & 포토존
           </h2>
-          <p className="text-sm sm:text-base text-[#52525B] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#52525B] leading-relaxed break-keep">
             비비드 오렌지 파사드부터 코랄레드 부스석, 은은한 튤 플라워 조명 거울까지.
             어느 각도에서 찍어도 감성 가득한 인생샷을 남길 수 있는 신림동의 트렌디한 공간입니다.
           </p>
         </div>
 
         {/* 3 Modern Space Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {SPACE_STORIES.map((story, idx) => (
             <div
               key={idx}
@@ -49,11 +49,11 @@ export const StorySection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
-                <h3 className="font-brand text-lg font-bold text-[#18181B] group-hover:text-[#FF5B00] transition-colors leading-snug">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5 sm:space-y-3">
+                <h3 className="font-brand text-base sm:text-lg font-bold text-[#18181B] group-hover:text-[#FF5B00] transition-colors leading-snug break-keep">
                   {story.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed break-keep">
                   {story.desc}
                 </p>
               </div>
@@ -62,8 +62,8 @@ export const StorySection: React.FC = () => {
         </div>
 
         {/* Mascot Photo Spot Tip Box */}
-        <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-[#FFD9C4] shadow-sm flex flex-col md:flex-row items-center gap-6">
-          <div className="w-20 h-20 rounded-2xl overflow-hidden bg-[#FFF5ED] border border-[#FF6B00]/30 shrink-0">
+        <div className="mt-10 sm:mt-12 bg-white rounded-3xl p-5 sm:p-8 border border-[#FFD9C4] shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-[#FFF5ED] border border-[#FF6B00]/30 shrink-0">
             <img
               src={MASCOT_INFO.bakingImg}
               alt="크로플을 구운 꼬마"
@@ -72,15 +72,15 @@ export const StorySection: React.FC = () => {
             />
           </div>
 
-          <div className="flex-1 text-center md:text-left space-y-1">
+          <div className="flex-1 space-y-1">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF5B00]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>꼬마 마스코트의 꿀팁</span>
             </div>
-            <h4 className="font-brand text-base sm:text-lg font-bold text-[#18181B]">
+            <h4 className="font-brand text-sm sm:text-lg font-bold text-[#18181B] break-keep leading-snug">
               &ldquo;튤 조명 원형 거울 앞에서 핑크 레트로 전화기 들고 찍으면 인스타 피드 박제각! 📸&rdquo;
             </h4>
-            <p className="text-xs text-[#71717A]">
+            <p className="text-xs text-[#71717A] break-keep leading-relaxed mt-1">
               거울 조명이 얼굴을 화사하게 밝혀주고, 빈티지 핑크 수화기 소품이 러블리한 감성을 더해줍니다.
             </p>
           </div>

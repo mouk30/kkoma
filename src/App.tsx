@@ -12,7 +12,7 @@ import { ItemOptionModal } from './components/ItemOptionModal';
 import { CartDrawer } from './components/CartDrawer';
 import { MenuItem, MASCOT_INFO } from './data/cafeData';
 import { CartItem, CartItemOption } from './types/cart';
-import { Check, Sparkles, MessageCircle, X } from 'lucide-react';
+import { Check, Sparkles, MessageCircle, X, Coffee, Stamp, MapPin, ShoppingBag } from 'lucide-react';
 
 export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -130,7 +130,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-[#FCFBF7] text-[#18181B]">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#18181B] text-white px-4 py-2.5 rounded-xl shadow-lg border border-[#3F3F46] flex items-center gap-2 text-xs font-medium animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#18181B] text-white px-4 py-2.5 rounded-xl shadow-lg border border-[#3F3F46] flex items-center gap-2 text-xs font-medium animate-in fade-in slide-in-from-bottom-2 duration-200">
           <Check className="w-4 h-4 text-emerald-400" />
           <span>{toastMessage}</span>
         </div>
@@ -218,7 +218,7 @@ export default function App() {
         onOpenStamp={() => scrollToSection('stamp')}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-0">
         {/* Hero Section */}
         <Hero
           onOrderClick={() => scrollToSection('menu')}
@@ -245,6 +245,61 @@ export default function App() {
         {/* Location & Visiting Guide */}
         <LocationSection />
       </main>
+
+      {/* Mobile Fixed Bottom Navigation Bar (Thumb Zone) */}
+      <nav
+        aria-label="모바일 하단 내비게이션"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EBE5DC] shadow-lg pb-safe"
+      >
+        <div className="grid grid-cols-5 items-center h-14 px-1">
+          <button
+            onClick={() => scrollToSection('menu')}
+            className="flex flex-col items-center justify-center py-1 text-[#71717A] hover:text-[#FF5B00] active:text-[#FF5B00] transition-colors cursor-pointer"
+          >
+            <Coffee className="w-5 h-5" />
+            <span className="text-[10px] font-bold tracking-tight mt-0.5">메뉴</span>
+          </button>
+
+          <button
+            onClick={() => scrollToSection('story')}
+            className="flex flex-col items-center justify-center py-1 text-[#71717A] hover:text-[#FF5B00] active:text-[#FF5B00] transition-colors cursor-pointer"
+          >
+            <Sparkles className="w-5 h-5" />
+            <span className="text-[10px] font-bold tracking-tight mt-0.5">포토존</span>
+          </button>
+
+          <button
+            onClick={() => scrollToSection('stamp')}
+            className="flex flex-col items-center justify-center py-1 text-[#71717A] hover:text-[#FF5B00] active:text-[#FF5B00] transition-colors cursor-pointer"
+          >
+            <Stamp className="w-5 h-5 text-[#FF5B00]" />
+            <span className="text-[10px] font-bold tracking-tight mt-0.5 text-[#FF5B00]">스탬프</span>
+          </button>
+
+          <button
+            onClick={() => scrollToSection('location')}
+            className="flex flex-col items-center justify-center py-1 text-[#71717A] hover:text-[#FF5B00] active:text-[#FF5B00] transition-colors cursor-pointer"
+          >
+            <MapPin className="w-5 h-5" />
+            <span className="text-[10px] font-bold tracking-tight mt-0.5">길찾기</span>
+          </button>
+
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="relative flex flex-col items-center justify-center py-1 text-[#18181B] hover:text-[#FF5B00] active:text-[#FF5B00] transition-colors cursor-pointer"
+          >
+            <div className="relative">
+              <ShoppingBag className="w-5 h-5 text-[#18181B]" />
+              {totalCartCount > 0 && (
+                <span className="absolute -top-1.5 -right-2.5 bg-[#FF5B00] text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center tabular-nums shadow-xs">
+                  {totalCartCount}
+                </span>
+              )}
+            </div>
+            <span className="text-[10px] font-bold tracking-tight mt-0.5">포장주문</span>
+          </button>
+        </div>
+      </nav>
 
       {/* Footer */}
       <Footer />

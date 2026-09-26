@@ -60,7 +60,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-xs">
-      <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div className="absolute inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
         <div className="w-screen max-w-md bg-[#FCFBF7] shadow-2xl border-l border-[#EBE5DC] flex flex-col justify-between">
           {/* Top Header */}
           <div className="p-4 sm:p-5 border-b border-[#F0ECE4] flex items-center justify-between bg-white">
@@ -72,14 +72,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F4F5] transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-[#71717A] hover:text-[#18181B] hover:bg-[#F4F4F5] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Body Content */}
-          <div className="p-5 flex-1 overflow-y-auto space-y-6">
+          <div className="p-4 sm:p-5 flex-1 overflow-y-auto space-y-5 sm:space-y-6">
             {isOrderComplete ? (
               <div className="py-6 text-center space-y-4">
                 <div className="w-20 h-20 rounded-full overflow-hidden p-1 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] mx-auto shadow-md">
@@ -96,7 +96,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <h3 className="font-brand text-2xl font-black text-[#18181B]">
                     맛있게 준비해둘게요! 🧡
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#52525B] max-w-xs mx-auto leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#52525B] max-w-xs mx-auto leading-relaxed break-keep">
                     바리스타 꼬마가 주문을 확인했습니다. 지정하신 픽업 시간에 매장에 방문해 주세요.
                   </p>
                 </div>

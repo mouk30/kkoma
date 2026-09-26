@@ -58,53 +58,53 @@ export const ReviewSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-[#FCFBF7] border-t border-[#F0ECE4]">
+    <section id="reviews" className="py-14 sm:py-20 md:py-24 bg-[#FCFBF7] border-t border-[#F0ECE4]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header & Overall Rating */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="space-y-3 max-w-xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
+          <div className="space-y-2.5 sm:space-y-3 max-w-xl">
             <div className="text-xs text-[#FF5B00] font-bold tracking-wider uppercase">
               Naver Place Visitor Reviews
             </div>
-            <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight">
+            <h2 className="font-brand text-2xl sm:text-3xl lg:text-4xl font-black text-[#18181B] tracking-tight break-keep">
               손님들이 전하는 COMA CAFE 이야기
             </h2>
-            <p className="text-sm text-[#52525B]">
+            <p className="text-xs sm:text-sm text-[#52525B] break-keep leading-relaxed">
               네이버 플레이스에 남겨주신 소중한 방문자 실시간 리뷰와 따뜻한 마음들입니다.
             </p>
           </div>
 
           {/* Aggregate Rating Pill-less Box */}
-          <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-[#EBE5DC] shadow-xs">
-            <div className="text-center pr-4 border-r border-[#F0ECE4]">
-              <div className="font-brand text-3xl font-black text-[#18181B] tabular-nums">
+          <div className="flex items-center gap-3.5 sm:gap-4 bg-white p-3.5 sm:p-4 rounded-2xl border border-[#EBE5DC] shadow-xs shrink-0">
+            <div className="text-center pr-3.5 sm:pr-4 border-r border-[#F0ECE4]">
+              <div className="font-brand text-2xl sm:text-3xl font-black text-[#18181B] tabular-nums">
                 4.95
               </div>
-              <div className="flex items-center gap-0.5 text-amber-500 justify-center mt-1">
+              <div className="flex items-center gap-0.5 text-amber-500 justify-center mt-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  <Star key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-current" />
                 ))}
               </div>
             </div>
-            <div className="text-xs text-[#71717A] space-y-1">
+            <div className="text-[11px] sm:text-xs text-[#71717A] space-y-0.5">
               <div>네이버 플레이스 만족도 <strong className="text-[#18181B]">최우수</strong></div>
-              <div>&ldquo;크로플이 바삭하고 포토존이 예뻐요&rdquo;</div>
+              <div className="break-keep">&ldquo;크로플이 바삭하고 포토존이 예뻐요&rdquo;</div>
             </div>
           </div>
         </div>
 
         {/* Action Bar */}
-        <div className="flex items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 sm:mb-8">
           <div className="text-xs text-[#71717A]">
             총 <span className="font-bold text-[#18181B]">{reviewsList.length}</span>개의 후기
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="grid grid-cols-2 sm:flex sm:items-center gap-2">
             <button
               onClick={() => setShowAddModal(true)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-[#FFF5ED] text-[#18181B] hover:text-[#FF5B00] border border-[#E4E4E7] hover:border-[#FF5B00] text-xs font-bold transition-all cursor-pointer shadow-xs"
+              className="min-h-[40px] flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-[#FFF5ED] text-[#18181B] hover:text-[#FF5B00] border border-[#E4E4E7] hover:border-[#FF5B00] text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95"
             >
-              <MessageSquarePlus className="w-3.5 h-3.5 text-[#FF5B00]" />
+              <MessageSquarePlus className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
               <span>방명록 남기기</span>
             </button>
 
@@ -112,30 +112,30 @@ export const ReviewSection: React.FC = () => {
               href={`${CAFE_INFO.naverMapUrl}#review`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#03C75A]/10 hover:bg-[#03C75A]/20 text-[#028a3d] text-xs font-bold transition-colors"
+              className="min-h-[40px] flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#03C75A]/10 hover:bg-[#03C75A]/20 text-[#028a3d] text-xs font-bold transition-colors"
             >
-              <span>네이버 플레이스 전체보기</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span>네이버 플레이스</span>
+              <ExternalLink className="w-3.5 h-3.5 shrink-0" />
             </a>
           </div>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {reviewsList.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white p-6 rounded-3xl border border-[#EBE5DC] shadow-xs flex flex-col justify-between space-y-4 hover:border-[#FF5B00]/40 transition-colors"
+              className="bg-white p-5 sm:p-6 rounded-3xl border border-[#EBE5DC] shadow-xs flex flex-col justify-between space-y-3.5 sm:space-y-4 hover:border-[#FF5B00]/40 transition-colors"
             >
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 {/* Author, rating, date */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="font-brand text-sm font-bold text-[#18181B]">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="font-brand text-xs sm:text-sm font-bold text-[#18181B]">
                       {rev.author}
                     </span>
                     <span aria-hidden="true" className="text-[#E4E4E7]">·</span>
-                    <span className="text-[11px] text-[#FF5B00] font-semibold">{rev.tag}</span>
+                    <span className="text-[10px] sm:text-[11px] text-[#FF5B00] font-semibold">{rev.tag}</span>
                   </div>
                   <div className="flex items-center gap-0.5 text-amber-500">
                     {Array.from({ length: rev.rating }).map((_, i) => (
@@ -145,17 +145,17 @@ export const ReviewSection: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <p className="text-xs sm:text-sm text-[#3F3F46] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#3F3F46] leading-relaxed break-keep">
                   &ldquo;{rev.content}&rdquo;
                 </p>
               </div>
 
               {/* Footer */}
-              <div className="pt-3 border-t border-[#F4F1EA] flex items-center justify-between text-xs text-[#71717A]">
+              <div className="pt-2.5 sm:pt-3 border-t border-[#F4F1EA] flex items-center justify-between text-xs text-[#71717A]">
                 <span className="font-mono text-[11px]">{rev.date}</span>
                 <button
                   onClick={() => handleLike(rev.id)}
-                  className="flex items-center gap-1 hover:text-[#FF5B00] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-2 py-1 rounded-lg hover:bg-[#FFF5ED] hover:text-[#FF5B00] transition-colors cursor-pointer"
                 >
                   <ThumbsUp className="w-3.5 h-3.5" />
                   <span className="font-mono text-[11px] tabular-nums font-bold">{rev.likes}</span>

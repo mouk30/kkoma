@@ -43,99 +43,108 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Typography & Mascot Integration */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
             {/* Unboxed Metadata & Status */}
-            <div className="flex flex-wrap items-center gap-2 text-xs text-[#52525B]">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-[#52525B]">
               <span className="font-bold text-[#FF5B00] tracking-wide">
                 신림동 핫플레이스
               </span>
               <span aria-hidden="true" className="text-[#D4D4D8]">·</span>
-              <span className="flex items-center gap-1.5 font-semibold text-[#18181B]">
-                <span className={`w-2 h-2 rounded-full ${openStatus.isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
-                {openStatus.text} ({openStatus.timeDesc})
-              </span>
+              <div className="flex items-center gap-1.5 font-semibold text-[#18181B]">
+                <span className={`w-2 h-2 rounded-full shrink-0 ${openStatus.isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
+                <span>{openStatus.text}</span>
+                <span className="text-[#71717A] font-normal">({openStatus.timeDesc})</span>
+              </div>
               <span aria-hidden="true" className="text-[#D4D4D8] hidden sm:inline">·</span>
               <span className="hidden sm:inline text-[#71717A]">신원시장 골목 50m</span>
             </div>
 
             {/* Headline */}
             <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="font-brand text-sm sm:text-base font-extrabold text-[#FF5B00] uppercase tracking-wider">
-                  24 Hours & Community Lounge
+              <div className="inline-flex items-center gap-2">
+                <span className="font-brand text-xs sm:text-sm font-extrabold text-[#FF5B00] uppercase tracking-wider">
+                  24H Community Lounge
                 </span>
-                <span className="text-xs bg-[#FFEDE3] text-[#FF5B00] font-bold px-2 py-0.5 rounded-full">
+                <span className="text-[11px] sm:text-xs bg-[#FFEDE3] text-[#FF5B00] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                   새벽 5시까지 운영
                 </span>
               </div>
-              <h1 className="font-brand text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#18181B] leading-[1.2]">
-                모던하고 힙한 만남의 광장,<br />
-                <span className="text-[#FF5B00]">COMA CAFE</span> 꼬마다방
+              <h1 className="font-brand text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#18181B] leading-snug sm:leading-[1.2] break-keep">
+                모던하고 힙한 만남의 광장,<br className="hidden sm:inline" />
+                <span className="text-[#FF5B00]"> COMA CAFE</span> 꼬마다방
               </h1>
             </div>
 
             {/* Body Description */}
-            <p className="text-base sm:text-lg text-[#52525B] leading-relaxed max-w-xl">
-              비비드한 시그니처 오렌지 파사드와 스트라이프 어닝,
-              감각적인 코랄레드 부스석과 핑크 스피커, 그리고 사랑스러운 마스코트 <strong>&apos;꼬마&apos;</strong>가 반겨주는 현대적인 공간.
-              새벽 5시까지 갓 구운 브라운치즈 크로플과 스페셜티 커피를 즐겨보세요!
+            <p className="text-sm sm:text-base lg:text-lg text-[#52525B] leading-relaxed max-w-xl break-keep">
+              비비드 오렌지 파사드와 그린 스트라이프 어닝,
+              감각적인 코랄레드 부스석과 핑크 스피커, 그리고 귀여운 마스코트 <strong>&apos;꼬마&apos;</strong>가 반겨주는 현대적인 공간.
+              새벽 5시까지 갓 구운 브라운치즈 크로플과 스페셜티 커피를 편안하게 즐겨보세요!
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-1 sm:pt-2">
               <button
                 onClick={onOrderClick}
-                className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF5B00] hover:bg-[#E65200] text-white font-bold text-sm transition-all shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap active:scale-98"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#FF5B00] hover:bg-[#E65200] text-white font-bold text-sm transition-all shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap active:scale-[0.98]"
               >
-                <ShoppingBag className="w-4 h-4 text-white" />
+                <ShoppingBag className="w-4 h-4 text-white shrink-0" />
                 <span>메뉴 보기 & 포장 주문</span>
               </button>
 
-              <a
-                href={CAFE_INFO.naverMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl border-2 border-[#03C75A]/40 bg-[#03C75A]/5 hover:bg-[#03C75A]/15 text-[#028a3d] font-bold text-sm transition-colors cursor-pointer whitespace-nowrap"
-              >
-                <span className="w-2 h-2 rounded-full bg-[#03C75A]" />
-                <span>네이버 플레이스 연동</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center">
+                <a
+                  href={CAFE_INFO.naverMapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl border border-[#03C75A]/40 bg-[#03C75A]/5 hover:bg-[#03C75A]/15 text-[#028a3d] font-bold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap text-center"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#03C75A] shrink-0" />
+                  <span>네이버 지도</span>
+                  <ExternalLink className="w-3 h-3 shrink-0" />
+                </a>
 
-              <button
-                onClick={onStampClick}
-                className="flex items-center gap-2 px-4 py-3.5 rounded-xl border border-[#E4E4E7] bg-white hover:bg-[#F4F4F5] text-[#27272A] font-bold text-sm transition-colors cursor-pointer whitespace-nowrap"
-              >
-                <Stamp className="w-4 h-4 text-[#FF5B00]" />
-                <span>꼬마 도장 쿠폰</span>
-              </button>
+                <button
+                  onClick={onStampClick}
+                  className="flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl border border-[#E4E4E7] bg-white hover:bg-[#F4F4F5] text-[#27272A] font-bold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap text-center"
+                >
+                  <Stamp className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
+                  <span>꼬마 도장 쿠폰</span>
+                </button>
+              </div>
             </div>
 
             {/* Key Modern Highlights (Real store features) */}
-            <div className="pt-4 border-t border-[#F0ECE4] grid grid-cols-3 gap-4 text-left">
-              <div>
-                <span className="block font-brand text-2xl font-black text-[#18181B] tabular-nums">
+            <div className="pt-4 border-t border-[#F0ECE4] grid grid-cols-3 gap-2 sm:gap-4 text-left">
+              <div className="p-2.5 sm:p-0 rounded-2xl bg-[#F8F6F0] sm:bg-transparent">
+                <span className="block font-brand text-lg sm:text-2xl font-black text-[#18181B] tabular-nums leading-tight">
                   11~05시
                 </span>
-                <span className="text-xs text-[#71717A] font-medium">새벽 심야 만남의 광장</span>
-              </div>
-              <div>
-                <span className="block font-brand text-2xl font-black text-[#FF5B00] tabular-nums">
-                  인스타 핫플
+                <span className="text-[11px] sm:text-xs text-[#71717A] font-medium block mt-0.5 break-keep">
+                  새벽 심야 광장
                 </span>
-                <span className="text-xs text-[#71717A] font-medium">플라워 미러 & 핑크폰</span>
               </div>
-              <div>
-                <span className="block font-brand text-2xl font-black text-[#18181B] tabular-nums">
+              <div className="p-2.5 sm:p-0 rounded-2xl bg-[#F8F6F0] sm:bg-transparent">
+                <span className="block font-brand text-lg sm:text-2xl font-black text-[#FF5B00] tabular-nums leading-tight">
+                  포토존 핫플
+                </span>
+                <span className="text-[11px] sm:text-xs text-[#71717A] font-medium block mt-0.5 break-keep">
+                  플라워 거울 & 폰
+                </span>
+              </div>
+              <div className="p-2.5 sm:p-0 rounded-2xl bg-[#F8F6F0] sm:bg-transparent">
+                <span className="block font-brand text-lg sm:text-2xl font-black text-[#18181B] tabular-nums leading-tight">
                   수제 크로플
                 </span>
-                <span className="text-xs text-[#71717A] font-medium">젤라또 & 브라운치즈</span>
+                <span className="text-[11px] sm:text-xs text-[#71717A] font-medium block mt-0.5 break-keep">
+                  젤라또 & 치즈
+                </span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Modern Exterior Showcase + Floating Mascot Widget */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-2 lg:mt-0">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EBE5DC] bg-[#F7F5F0] aspect-[4/3] lg:aspect-[16/11]">
               <img
                 src={heroComaModernImg}
@@ -144,19 +153,19 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
                 className="w-full h-full object-cover transform hover:scale-103 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="font-brand text-base font-black tracking-wide">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                <p className="font-brand text-sm sm:text-base font-black tracking-wide break-keep">
                   COMA CAFE · 24시 꼬마다방 & 만남의 광장
                 </p>
-                <p className="text-xs text-white/90 mt-0.5">
+                <p className="text-[11px] sm:text-xs text-white/90 mt-0.5 break-keep">
                   비비드 오렌지 파사드 & 그린 스트라이프 테라스
                 </p>
               </div>
             </div>
 
-            {/* Floating Cute Mascot Card */}
-            <div className="flex items-center gap-3 absolute -bottom-5 -left-4 sm:-left-6 bg-white p-3 rounded-2xl shadow-xl border border-[#FFD9C4] max-w-[280px] animate-in fade-in slide-in-from-bottom-2 duration-300">
-              <div className="w-12 h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] shrink-0">
+            {/* Mascot Mini Card */}
+            <div className="flex items-center gap-2.5 sm:gap-3 mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-4 bg-white p-2.5 sm:p-3 rounded-2xl shadow-md sm:shadow-xl border border-[#FFD9C4] max-w-full sm:max-w-[280px]">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] shrink-0">
                 <img
                   src={MASCOT_INFO.avatar}
                   alt="마스코트 꼬마"
@@ -164,12 +173,12 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              <div className="text-xs">
-                <div className="flex items-center gap-1">
+              <div className="text-xs min-w-0">
+                <div className="flex items-center gap-1.5">
                   <span className="font-bold text-[#18181B]">바리스타 꼬마</span>
-                  <span className="text-[10px] text-[#FF5B00] font-bold">Mascot</span>
+                  <span className="text-[10px] text-[#FF5B00] font-bold bg-[#FFEDE3] px-1.5 py-0.2 rounded-md">Mascot</span>
                 </div>
-                <p className="text-[#52525B] text-[11px] leading-tight mt-0.5">
+                <p className="text-[#52525B] text-[11px] leading-snug mt-0.5 break-keep truncate sm:whitespace-normal">
                   &ldquo;안녕! 맛있는 크로플 구워둘게 🧡&rdquo;
                 </p>
               </div>
