@@ -163,15 +163,19 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
               </div>
             </div>
 
-            {/* Mascot Mini Card */}
-            <div className="flex items-center gap-2.5 sm:gap-3 mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-4 bg-white p-2.5 sm:p-3 rounded-2xl shadow-md sm:shadow-xl border border-[#FFD9C4] max-w-full sm:max-w-[280px]">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] shrink-0">
+            {/* Mascot Mini Card with Greeting Animation */}
+            <div className="flex items-center gap-2.5 sm:gap-3 mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-4 bg-white p-2.5 sm:p-3 rounded-2xl shadow-md sm:shadow-xl border border-[#FFD9C4] max-w-full sm:max-w-[280px] animate-kkoma-greet">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] shrink-0">
                 <img
                   src={MASCOT_INFO.avatar}
                   alt="마스코트 꼬마"
                   referrerPolicy="no-referrer"
                   className="w-full h-full rounded-full object-cover"
                 />
+                {/* Cute Waving Hand Badge */}
+                <div className="absolute -top-0.5 -right-0.5 bg-[#FF5B00] text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] shadow-xs animate-kkoma-wave">
+                  👋
+                </div>
               </div>
               <div className="text-xs min-w-0">
                 <div className="flex items-center gap-1.5">
@@ -179,7 +183,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onStampClick }) => {
                   <span className="text-[10px] text-[#FF5B00] font-bold bg-[#FFEDE3] px-1.5 py-0.2 rounded-md">Mascot</span>
                 </div>
                 <p className="text-[#52525B] text-[11px] leading-snug mt-0.5 break-keep truncate sm:whitespace-normal">
-                  &ldquo;안녕! 맛있는 크로플 구워둘게 🧡&rdquo;
+                  &ldquo;안녕! 손 흔들며 반갑게 맞이할게 🧡&rdquo;
                 </p>
               </div>
             </div>

@@ -10,9 +10,10 @@ import { LocationSection } from './components/LocationSection';
 import { Footer } from './components/Footer';
 import { ItemOptionModal } from './components/ItemOptionModal';
 import { CartDrawer } from './components/CartDrawer';
-import { MenuItem, MASCOT_INFO } from './data/cafeData';
+import { MascotGreeting } from './components/MascotGreeting';
+import { MenuItem } from './data/cafeData';
 import { CartItem, CartItemOption } from './types/cart';
-import { Check, Sparkles, MessageCircle, X, Coffee, Stamp, MapPin, ShoppingBag } from 'lucide-react';
+import { Check, Coffee, Stamp, MapPin, ShoppingBag, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -27,7 +28,6 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modalItem, setModalItem] = useState<MenuItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [isMascotPopupOpen, setIsMascotPopupOpen] = useState(false);
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -136,80 +136,8 @@ export default function App() {
         </div>
       )}
 
-      {/* Floating Mascot Quick Chat Assistant */}
-      <div className="fixed bottom-6 left-6 z-40 hidden sm:block">
-        {isMascotPopupOpen ? (
-          <div className="bg-white rounded-2xl p-4 shadow-2xl border-2 border-[#FFD9C4] w-72 mb-2 animate-in fade-in slide-in-from-bottom-3 duration-200">
-            <div className="flex items-center justify-between border-b border-[#F0ECE4] pb-2 mb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full overflow-hidden p-0.5 bg-[#FF5B00]">
-                  <img
-                    src={MASCOT_INFO.avatar}
-                    alt="꼬마"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="font-bold text-xs text-[#18181B] block">마스코트 꼬마</span>
-                  <span className="text-[10px] text-[#FF5B00] font-semibold">COMA CAFE 안내원</span>
-                </div>
-              </div>
-              <button
-                onClick={() => setIsMascotPopupOpen(false)}
-                className="p-1 rounded-lg text-[#A1A1AA] hover:text-[#18181B] hover:bg-[#F4F4F5] cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <p className="text-xs text-[#52525B] leading-relaxed">
-              &ldquo;신림동 COMA CAFE는 <strong>새벽 5시까지</strong> 열려있어!
-              튤 조명 거울 포토존에서 핑크 전화기랑 인생샷 꼭 남겨봐 🧡&rdquo;
-            </p>
-
-            <div className="mt-3 pt-2 border-t border-[#F0ECE4] flex gap-2">
-              <button
-                onClick={() => {
-                  scrollToSection('menu');
-                  setIsMascotPopupOpen(false);
-                }}
-                className="flex-1 py-1.5 px-2 bg-[#FF5B00] hover:bg-[#E65200] text-white rounded-lg text-[11px] font-bold text-center transition-colors cursor-pointer"
-              >
-                크로플 보러가기
-              </button>
-              <button
-                onClick={() => {
-                  scrollToSection('stamp');
-                  setIsMascotPopupOpen(false);
-                }}
-                className="flex-1 py-1.5 px-2 bg-[#F4F1EA] hover:bg-[#EBE6DC] text-[#18181B] rounded-lg text-[11px] font-bold text-center transition-colors cursor-pointer"
-              >
-                도장 찍기
-              </button>
-            </div>
-          </div>
-        ) : null}
-
-        <button
-          onClick={() => setIsMascotPopupOpen(!isMascotPopupOpen)}
-          className="group flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-[#FFF5ED] border-2 border-[#FFD9C4] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-          title="꼬마 마스코트와 대화하기"
-        >
-          <div className="w-8 h-8 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-[#FF5B00] to-[#FFA726] shadow-xs group-hover:scale-105 transition-transform">
-            <img
-              src={MASCOT_INFO.avatar}
-              alt="꼬마"
-              referrerPolicy="no-referrer"
-              className="w-full h-full rounded-full object-cover"
-            />
-          </div>
-          <span className="text-xs font-bold text-[#18181B] group-hover:text-[#FF5B00] transition-colors pr-1">
-            꼬마에게 물어보기
-          </span>
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-        </button>
-      </div>
+      {/* Interactive Mascot Greeting with Waving Animation and Sound */}
+      <MascotGreeting onNavigate={scrollToSection} />
 
       {/* Navigation Top Bar */}
       <Navbar

@@ -33,7 +33,7 @@ export const MascotBanner: React.FC<MascotBannerProps> = ({ onSelectRecommendedI
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Left: Mascot Image & Badge */}
             <div className="lg:col-span-4 flex flex-col items-center sm:flex-row lg:flex-col justify-center gap-3.5 sm:gap-4 text-center sm:text-left lg:text-center">
-              <div className="relative group shrink-0">
+              <div className="relative group shrink-0 animate-kkoma-greet">
                 <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-full p-1 sm:p-1.5 bg-gradient-to-tr from-[#FF6B00] via-[#FF8A3D] to-[#FFB703] shadow-lg">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white">
                     <img
@@ -43,6 +43,10 @@ export const MascotBanner: React.FC<MascotBannerProps> = ({ onSelectRecommendedI
                       className="w-full h-full rounded-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
+                </div>
+                {/* Waving Hand Badge */}
+                <div className="absolute top-1 -right-1 sm:top-2 sm:right-0 bg-white border-2 border-[#FF5B00] text-[#FF5B00] w-8 h-8 sm:w-9 sm:h-9 rounded-full shadow-lg flex items-center justify-center text-sm sm:text-base animate-kkoma-wave z-10" title="꼬마가 반갑게 인사해요!">
+                  👋
                 </div>
                 {/* Floating Heart Sticker */}
                 <div className="absolute -bottom-0.5 -right-0.5 bg-[#FF6B00] text-white p-1.5 sm:p-2 rounded-full shadow-md flex items-center justify-center">

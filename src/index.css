@@ -62,4 +62,91 @@
   scrollbar-width: none;
 }
 
+/* 꼬마다방 캐릭터 인사 & 손흔들기 애니메이션 */
+@keyframes kkoma-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(20deg) scale(1.1);
+  }
+  40%, 80% {
+    transform: rotate(-12deg) scale(1.05);
+  }
+}
+
+@keyframes kkoma-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes kkoma-greet {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(3deg);
+  }
+}
+
+@keyframes kkoma-pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+@keyframes heart-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-14px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+}
+
+.animate-kkoma-wave {
+  animation: kkoma-wave 1.6s ease-in-out infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}
+
+.animate-kkoma-bounce {
+  animation: kkoma-bounce 2.4s ease-in-out infinite;
+}
+
+.animate-kkoma-greet {
+  animation: kkoma-greet 2.8s ease-in-out infinite;
+}
+
+.animate-kkoma-ring {
+  animation: kkoma-pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-heart-float {
+  animation: heart-float 1.4s ease-out forwards;
+}
+
+
 
